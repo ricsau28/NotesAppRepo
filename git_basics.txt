@@ -1,9 +1,15 @@
 git config --list
 git status
 git log --oneline
+git remote add origin https://github.com/ricsau28/NotesAppRepo.git
+git push -u origin master
 --------
 git init
 git add .
 git commit -m "Your message here"
+----
+git checkout <commit> <file>
+git reset HEAD <file>      -- unstages the checkout file
+git checkout -- <file>	   --   ""      ""     ""    ""
 
 

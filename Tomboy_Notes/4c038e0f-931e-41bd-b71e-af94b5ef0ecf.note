@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Debian 10 Install</title><text xml:space="preserve"><note-content xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy" version="0.1">Debian 10 Install
+
+1. Advanced Options...
+2. Graphical Expert
+3. After going to "Configure the package manager", create a shell
+  a. #mkdir <link:url>/mnt/root</link:url>
+  b. df -h
+  c. #mount <link:url>/dev/sda2</link:url> <link:url>/mnt/root</link:url>
+  d. chroot <link:url>/mnt/root</link:url>
+  e. nano <link:url>/etc/apt/sources.list</link:url>
+	1. Comment out cdrom line(s)
+	2. Use testing rather than buster
+	3. Use testing-security
+	4. Use testing-updates
+  f. #apt update (just to test changes made above)</note-content>
+</text><last-change-date>2020-10-27T05:12:29.485851Z</last-change-date><last-metadata-change-date>2021-01-09T12:56:44.631072Z</last-metadata-change-date><create-date>2020-10-27T04:32:57.635379Z</create-date><cursor-position>411</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

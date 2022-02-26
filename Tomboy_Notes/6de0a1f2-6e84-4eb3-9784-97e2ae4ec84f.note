@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Book of CSS3</title><text xml:space="preserve"><note-content xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy" version="0.1">Book of CSS3
+
+Every font you use adds to the page's load time.
+
+A font face is a single permutation of weight, slope, etc? (p49)
+
+For each face such as bolder weight or an italic type the same rule must be duplicated with extra descriptors added to the new rule.
+
+When using web fonts you must define a link to the appropriate file for each different font face you use.
+
+<link:url>http://www.magnetstudio.com/words/2010/opentype-guide</link:url>
+
+rem - root em: relative to the font-size of the document
+vw - viewport width; 1vw = 1%
+vw - viewport height
+calc()
+
+
+</note-content>
+</text><last-change-date>2018-12-21T23:40:13.557747Z</last-change-date><last-metadata-change-date>2021-01-09T12:56:44.746370Z</last-metadata-change-date><create-date>2018-12-21T20:10:53.898010Z</create-date><cursor-position>543</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height><tags><tag>system:notebook:Notes</tag></tags></note>
+

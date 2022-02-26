@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Chess</title><text xml:space="preserve"><note-content xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy" version="0.1">Chess
+
+Twitch: <link:url>https://www.twitch.tv/computerchess</link:url>
+
+Openings
+  C53
+  D07
+  D17-D19
+  B01(?), B1, B17
+  B10 - B19 Caro-Kann
+  B20 - B99 Sicilian
+  C00 - C19 French defense
+  C30 - C39 King's Gambit
+  C51 - C52 Evan's Gambit
+  C53 - C54 Giuoco Piano
+  D52
+
+Players
+ Gelfand</note-content>
+</text><last-change-date>2018-10-11T18:12:07.040218Z</last-change-date><last-metadata-change-date>2021-01-09T12:56:44.727692Z</last-metadata-change-date><create-date>2014-08-29T10:51:18.652558Z</create-date><cursor-position>271</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height><tags><tag>system:notebook:Chess</tag></tags></note>
+

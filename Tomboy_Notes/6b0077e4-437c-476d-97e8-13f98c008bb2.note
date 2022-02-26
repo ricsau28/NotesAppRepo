@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Linux Commands</title><text xml:space="preserve"><note-content xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy" version="0.1">Linux Commands
+
+To sort files by date: ls -lrt, ls -halt, (also see: ls * -rsl)
+
+Tar - archving and compressing files and directories
+  tar -cvzf flastaskr_07_04_2018_OLD.tar.gz <link:internal>flask-taskr</link:internal>
+  tar -xzvf archive.tar.gz -C /tmp
+  tar -pczf MyBackup.tar.gz <link:url>/home/user/public_html/</link:url> --exclude "/home/user/public_html/tmp"
+
+Creating Soft Link
+  ln -s file1 link1
+
+Getting Linux Version
+  lsb_release -a 
+
+List groups on system
+ <link:internal>cat</link:internal> <link:url>/etc/group</link:url> or cut -d: -f1 <link:url>/etc/group</link:url> | nl
+
+List groups user belongs to
+  groups mary
+
+Change group ownership of directory
+  chgrp -R www-data  <link:url>/var/log/apache2</link:url>
+
+Add new group to system (e.g., firefox)
+ groupadd engineering
+
+Add user to group
+  usermod -aG engineering ricsau
+
+Update Grub:
+ sudo grub2-mkconfig -o <link:url>/boot/grub2/grub.cfg</link:url>
+
+Old
+usr/lib/firefox-esr/firefox-esr %u
+
+</note-content>
+</text><last-change-date>2019-07-26T18:35:52.300234Z</last-change-date><last-metadata-change-date>2021-01-09T12:56:44.733984Z</last-metadata-change-date><create-date>2018-06-19T01:51:46.996563Z</create-date><cursor-position>800</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height><tags><tag>system:notebook:Linux</tag></tags></note>
+

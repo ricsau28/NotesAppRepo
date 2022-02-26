@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Desktop - Sytem Info</title><text xml:space="preserve"><note-content xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy" version="0.1">Desktop - Sytem Info
+
+Partition Info
+<link:url>/mnt/shared_data/Pictures/System/Recent</link:url>
+
+Important Apps
+<link:internal>Android</link:internal>
+  <link:url>/home/ricsau/Apps/android-studio/bin/studio.sh</link:url>
+  SDK Manager
+   <link:url>/mnt/shared_data/Linux/Apps/android/Sdk</link:url>
+</note-content>
+</text><last-change-date>2020-10-22T22:18:17.231039Z</last-change-date><last-metadata-change-date>2021-01-09T12:56:44.739949Z</last-metadata-change-date><create-date>2020-10-22T22:10:19.568229Z</create-date><cursor-position>207</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height></note>
+

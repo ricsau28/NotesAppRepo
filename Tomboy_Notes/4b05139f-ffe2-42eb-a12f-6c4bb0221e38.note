@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Learning Python</title><text xml:space="preserve"><note-content xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy" version="0.1">Learning Python
+
+1. Date/Time
+2. Strings
+3. Review Classes
+4. Pass by reference?
+
+View url.py source code
+
+Flask
+  python3 -m flask run
+
+Pip
+  Pip, easy_install are package managers. You can download packages from the command line.
+  pip3 install &lt;package&gt; (pip3 install psycopg2)
+  pip3 freeze &gt; requirements.txt
+  pip3 install -r requirements.txt
+
+Locations: <link:url>/usr/bin/pip,</link:url> <link:url>/usr/bin/pip2,</link:url> <link:url>/usr/bin/pip2.7</link:url>
+Documentation: <link:url>/usr/share/doc/packages/python</link:url>
+
+I created a <link:url>/mnt/shared_data/Programming/Labs/Python2.7</link:url> folder and created soft links for pip, virutalenv.
+
+Virtualenv
+  python3 -m venv venv -- creates the virtual environment, venv
+  source venv/bin/activate
+  deactivate
+
+  What is <link:broken>virtualenv</link:broken>? 
+    If <link:broken>virtualenv</link:broken> is present, but you can't create a virtual environment, try:
+    sudo <link:url>/usr/bin/easy_install</link:url> <link:broken>virtualenv</link:broken>
+
+pip -&gt; <link:url>/usr/bin/pip2.7</link:url>
+<link:broken>virtualenv</link:broken> -&gt; <link:url>/usr/bin/virtualenv-2.7</link:url>
+
+ln -s <link:url>/usr/bin/pip3</link:url> pip
+ln -s <link:url>/usr/bin/virtualenv-3.4</link:url> <link:broken>virtualenv</link:broken>
+
+You can use id() to find address of object</note-content>
+</text><last-change-date>2019-05-03T16:01:41.834358Z</last-change-date><last-metadata-change-date>2021-01-09T12:56:44.622497Z</last-metadata-change-date><create-date>2016-01-15T16:46:43.932477Z</create-date><cursor-position>992</cursor-position><selection-bound-position>-1</selection-bound-position><width>0</width><height>0</height><tags><tag>system:notebook:Programming</tag></tags></note>
+

@@ -12,4 +12,7 @@ git checkout <commit> <file>
 git reset HEAD <file>      -- unstages the checkout file
 git checkout -- <file>	   --   ""      ""     ""    ""
 
+--
+Had trouble using the command line to push to github on 2/25.
+
 

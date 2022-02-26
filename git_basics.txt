@@ -1,0 +1,9 @@
+git config --list
+git status
+git log --oneline
+--------
+git init
+git add .
+git commit -m "Your message here"
+
+

@@ -233,6 +233,8 @@ namespace NotesApp
         #endregion
 
         #region Constructors
+
+        /*
         public Note(string uri)
         {
             this.uri = uri;
@@ -249,6 +251,26 @@ namespace NotesApp
             change_date = DateTime.MinValue;
             metadata_change_date = DateTime.MinValue;
 
+        }
+        */
+
+        public Note(string uri, string nameOfNotebook = "Unfiled")
+        {
+            Notebook = nameOfNotebook;
+
+            this.uri = uri;
+            //this.guid = uri.Substring(0, uri.IndexOf(".note"));
+            this.guid = Path.GetFileNameWithoutExtension(this.uri);
+
+            x = -1;
+            y = -1;
+            selection_bound_pos = -1;
+
+            tags = new Dictionary<string, Tag>();
+
+            create_date = DateTime.MinValue;
+            change_date = DateTime.MinValue;
+            metadata_change_date = DateTime.MinValue;
         }
         #endregion
 

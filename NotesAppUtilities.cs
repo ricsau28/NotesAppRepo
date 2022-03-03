@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 namespace NotesApp
 {
@@ -16,7 +17,7 @@ namespace NotesApp
             if (index > 0)
             {
                 //return tag.Split(':')[2];
-                return tag.Substring(index + searchStr.Length);
+                return tag.Substring(index + searchStr.Length).Trim();
 
             }
             else
@@ -64,6 +65,15 @@ namespace NotesApp
         //return newClause;
 
         //}
+
+        public static string GetDateAndTime()
+        {
+            //string cultureName = "en-US";
+            //var culture = new CultureInfo(cultureName);
+            //DateTime localDate = DateTime.Now;
+
+            return DateTime.Now.ToString(new CultureInfo("en-US"));
+        }
 
 
         public static string ReplaceSQLChars(string clause)

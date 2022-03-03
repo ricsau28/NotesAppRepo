@@ -1,3 +1,5 @@
+#define DEBUG
+
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -16,20 +18,30 @@ namespace NotesApp
         #endregion
 
         #region Constructors
-        public NotesManager() { } //default constructor
+        public NotesManager() : this("")
+        {
+            //This should barf shouldn't it??
+            //Q: How to funnel users to a desired constructor??
+
+        } //default constructor
 
         public NotesManager(string notesFolder)
         {
+            if (string.IsNullOrEmpty(notesFolder))
+                throw new ArgumentException("NotesManager.Ctor: notesFolder is null or empty");
+
             NotesFolder = notesFolder;
         }
         #endregion
 
         public List<Note> LoadNotes()
         {
-            if (string.IsNullOrEmpty(NotesFolder))
-                return null;
-
+#if DEBUG
             int nDebugCount = 0;
+            const int MAX_DEBUG_COUNT = 200;
+#endif
+
+            int noteCount = 0;
             List<Note> noteList = new List<Note>();
 
             DirectoryInfo dirInfo = new DirectoryInfo(NotesFolder);
@@ -41,16 +53,19 @@ namespace NotesApp
             {
                 Note note = LoadNoteFromFile(noteFile.FullName);
                 noteList.Add(note);
+                noteCount++;
 
-                Console.WriteLine("Note GUID: {0}\tNote Title:{1}", note.GUID, note.Title);
+                //Console.WriteLine("LoadNotes: Note GUID: {0}\tNote Title:{1}", note.GUID, note.Title);     
 
-                nDebugCount++;
-
-                /*
-                if (nDebugCount >= 10)
+#if DEBUG
+                if (++nDebugCount >= MAX_DEBUG_COUNT)
                     break;
-                */
-            }//end foreach         
+#endif
+
+
+            }//end foreach  
+
+            Console.WriteLine("LoadNotes: noteCount: {0}\tnoteList.Length: {1}", noteCount, noteList.Count.ToString());
 
             return noteList;
 
@@ -65,14 +80,17 @@ namespace NotesApp
             string version = String.Empty;
             int num = -1;
             DateTime date = DateTime.MinValue;
-            Note note = null;
+
+            if (noteFileName == "c6065ba5-d09d-45e2-ad60-608f97d25bc5.note")
+            {
+                System.Diagnostics.Debugger.Break(); //Debian 10 Install
+            }
+
+            Note note = new Note(noteFileName);
+            //Console.WriteLine("Attempting to parse: {0}\n", noteFileName);
+            //note.Notebook = "Unfiled"; //Set default here. It will be changed when extracted from tags
 
             XmlDocument doc = new XmlDocument();
-
-
-            //Console.WriteLine("Attempting to parse: {0}\n", noteFileName);
-
-            note = new Note(noteFileName);
 
             doc.Load(noteFileName);
 
@@ -90,7 +108,10 @@ namespace NotesApp
                                 break;
 
                             case "title":
-                                note.Title = xmlNode.InnerText;
+                                note.Title = xmlNode.InnerText.Trim();
+
+                                if (note.Title == "Debian 10 Install" || note.Title == "Amazon")
+                                    System.Diagnostics.Debugger.Break();
                                 break;
 
                             case "note-content":
@@ -160,9 +181,13 @@ namespace NotesApp
 
                             case "tags":
                                 //See Tomboy's Note.cs
+                                /*
                                 string noteBook = ParseNotebookFromTags(xmlNode);
                                 if (!string.IsNullOrEmpty(noteBook))
                                     note.Notebook = noteBook;
+                                break;
+                                */
+                                note.Notebook = ParseNotebookFromTags(xmlNode);
                                 break;
 
                         }//end switch
@@ -201,7 +226,7 @@ namespace NotesApp
                 {
                     if (node.Name == "tag")
                     {
-                        tagStr = node.InnerText;
+                        tagStr = node.InnerText.Trim();
                         //if (!string.IsNullOrEmpty(tagStr) && tagStr.ToLower().Contains("notebook:"))
                         if (!string.IsNullOrEmpty(tagStr))
                         {
@@ -211,10 +236,15 @@ namespace NotesApp
 
                             //NB: For now, assume that a note can belong to many
                             //notebooks and append them to a StringBuilder
-                            string notebook = NotesAppUtilities.ExtractNotebookFromTag(tagStr);
 
-                            if (!string.IsNullOrEmpty(notebook))
-                                notebookTags.Append(notebook);
+                            //string notebook = NotesAppUtilities.ExtractNotebookFromTag(tagStr);
+
+                            notebookTags.Append(NotesAppUtilities.ExtractNotebookFromTag(tagStr));
+
+                            //if (!string.IsNullOrEmpty(notebook))
+                            //notebookTags.Append(notebook);
+
+                            //break;
                         }
                     }
                 }

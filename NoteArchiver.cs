@@ -31,10 +31,12 @@ namespace NotesApp
             {
                 cn.Open();
 
+                string notebook = NotesAppUtilities.ReplaceSQLChars(notebookName);
+
                 var cmd = cn.CreateCommand();
 
                 cmd.CommandText = "INSERT INTO notebooks (name) VALUES (@notebookName)";
-                cmd.Parameters.AddWithValue("@notebookName", notebookName);
+                cmd.Parameters.AddWithValue("@notebookName", notebook);
 
                 try
                 {
@@ -88,13 +90,13 @@ namespace NotesApp
                 cmd.CommandText = CreateInsertSQL(noteToAdd);
                 cmd.Parameters.AddWithValue("@guid", noteToAdd.GUID);
                 cmd.Parameters.AddWithValue("@version", noteToAdd.Version);
-                cmd.Parameters.AddWithValue("@title", noteToAdd.Title);
+                cmd.Parameters.AddWithValue("@title", NotesAppUtilities.ReplaceSQLChars(noteToAdd.Title));
                 cmd.Parameters.AddWithValue("@noteVersion", noteToAdd.NoteVersion);
                 cmd.Parameters.AddWithValue("@dateCreated", noteToAdd.CreateDate);
                 cmd.Parameters.AddWithValue("@dateChanged", noteToAdd.ChangeDate);
-                cmd.Parameters.AddWithValue("@notebook", noteToAdd.Notebook);
-                cmd.Parameters.AddWithValue("@content", noteToAdd.Content);
-                cmd.Parameters.AddWithValue("@text", noteToAdd.Text);
+                cmd.Parameters.AddWithValue("@notebook", NotesAppUtilities.ReplaceSQLChars(noteToAdd.Notebook));
+                cmd.Parameters.AddWithValue("@content", NotesAppUtilities.ReplaceSQLChars(noteToAdd.Content));
+                cmd.Parameters.AddWithValue("@text", NotesAppUtilities.ReplaceSQLChars(noteToAdd.Text));
 
                 try
                 {
